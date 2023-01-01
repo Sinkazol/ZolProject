@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  registerMode=false;
-  users:any;
+  registerMode = false;
+  users: any;
 
   constructor(private http: HttpClient) { }
 
@@ -16,21 +16,20 @@ export class HomeComponent implements OnInit {
     this.getUsers();
   }
 
-   cancelRegisterMode( event: boolean ) {
-    this.registerMode=event;
+  registerToggle() {
+    this.registerMode = !this.registerMode;
   }
 
-  registerToggle(): void{
-    this.registerMode=!this.registerMode;
-  }
-  getUsers(){
+  getUsers() {
     this.http.get('https://localhost:5001/api/users').subscribe({
-    next: response=>this.users=response,
-    error: error => console.log(error),
-    complete: () => console.log('Request has complete')
-  })
+      next: response => this.users = response,
+      error: error => console.log(error),
+      complete: () => console.log('Request has completed')
+    })
   }
 
-
+  cancelRegisterMode(event: boolean) {
+    this.registerMode = event;
+  }
 
 }
