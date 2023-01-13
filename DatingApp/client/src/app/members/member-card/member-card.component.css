@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.member-icon{
+.member-icons{
   position:absolute;
   bottom: -30%;
   left: 0;
@@ -26,7 +26,7 @@
   opacity: 0;
 }
 
-.card-img-wrapper:hover .member-icon{
+.card-img-wrapper:hover .member-icons{
   bottom: 0;
   opacity: 1;
 }
